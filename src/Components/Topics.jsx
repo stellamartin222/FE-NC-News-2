@@ -14,7 +14,9 @@ export default class Topics extends Component {
         return (
             <ul className="topicsBox">
                 {topics.map((topic) => {
-                    return <TopicsCards topic={topic}/>
+                    return <li key={topic.slug}>
+                    <TopicsCards topic={topic}/>
+                    </li>
                 })}
         </ul>
         )

@@ -7,10 +7,9 @@ export default class Home extends Component {
     }
 
     render() {
-        console.log(this.state.articles)
         return (
             <div>
-                Home
+                <h2>WHATEVER THE HECK I WANT</h2>
             </div>
         )
     }

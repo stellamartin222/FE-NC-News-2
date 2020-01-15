@@ -58,6 +58,8 @@ body {
 .topicsBox {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .topicsCardsBoxes {
@@ -71,17 +73,12 @@ body {
   margin-bottom: 2em;
 }
 
-.topicCardButtons {
-  border-radius: 25px;
-  border: 2px solid #660000;
-  padding: 5px;
-  align-items: flex-end;
-}
-
 .articlesBox {
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .articleListHeader {
@@ -100,8 +97,28 @@ body {
   color: #DAD2D8;
 }
 
+.noBulletPointsPlease {
+text-decoration: none;
+list-style-type: none;
+}
+
+.articlesHeader{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-left: 2em;
+}
+
+.sortByBox {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+}
+
 .singleArticleFullBox {
   display: flex;
+  flex-direction: column;
   margin-top: 1em;
   margin-left: 1em;
   border-radius: 25px;
@@ -113,3 +130,24 @@ body {
   color: #DAD2D8;
 }
 
+.commentBox {
+  border-radius: 25px;
+  background: #DAD2D8;
+  padding: 20px;
+  width: 90%;
+  height: 8em;
+  margin-bottom: 3em;
+  color: #0F8B8D;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.commentInputBox {
+  width: 98%;
+  height: 5em;
+  border-radius: 10px;
+}
