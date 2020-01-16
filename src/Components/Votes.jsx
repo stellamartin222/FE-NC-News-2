@@ -1,42 +1,37 @@
 import React, { Component } from 'react'
-import {updateArticleVotes} from '../api'
-import ErrorDisplay from './ErrorDisplay'
+import {updateVotes} from '../api'
+// import ErrorDisplay from './ErrorDisplay'
 
 export default class Votes extends Component {
     state = {
         voted : false,
-        newVote : 0,
-        err : null,
-        errMsg : false
+        newVote : 0
+        // err : null,
+        // errMsg : false
     }
 
     render() {
-        if (this.state.err) return <ErrorDisplay err={this.state.err}/>
         return (
             <div className="votesButton">
                 <button onClick={() => this.changeVotes(1)}>▲</button>
-                <p>votes : </p>
-                    {this.props.votes + this.state.newVote}
+                    <p className="votesText">{this.props.votes + this.state.newVote}</p>
                 <button onClick={() => this.changeVotes(-1)}>▼</button>
-                {this.state.errMsg && (<p>Like Failed :(</p>)}
+                {/* {this.state.errMsg && (<p>Like Failed :(</p>)} */}
             </div>
         )
     }
 
     changeVotes = (num) => {
-        this.setState((prevState) => {
+        const {article_id, comment_id} = this.props
+        this.setState((currentState) => {
            return {
-               newVote: prevState.newVote + num,
+               newVote: currentState.newVote + num,
                 voted: true
             }
         })
-        updateArticleVotes(this.props.article_id, this.state.newVote)
-        // .catch((err) => {
-        //     this.setState({
-        //         newVote : 0,
-        //         err : err,
-        //         errMsg : true
-        //     })
-        // })
+        updateVotes(article_id, comment_id, num)
+        .catch((err) => {
+            console.dir(err)
+        })
     }
 }

@@ -12,7 +12,7 @@ export default class CommentForm extends Component {
                     
                 <input className="commentInputBox" onChange={this.handleChange} type="text" placeholder="Write here...."/>
                 </label>
-                <button>Post</button>
+                <button className="commentInputButton">Post</button>
             </form>
         )
     }

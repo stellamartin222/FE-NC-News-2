@@ -38,13 +38,22 @@ export const getAllComments = (article_id) => {
         })
 }
 
-export const updateArticleVotes = (article, vote) => {
+export const updateVotes = (article_id, comment_id, vote) => {
+    if(article_id) {
     return axios
-    .patch(`${baseUrl}/articles/${article}`, 
+    .patch(`${baseUrl}/articles/${article_id}`, 
+    {inc_votes: vote})
+    .then(() => {
+        console.log('updated')
+    })  
+    } else {
+        return axios
+    .patch(`${baseUrl}/comments/${comment_id}`, 
     {inc_votes: vote})
     .then(() => {
         console.log('updated')
     })
+    }
 }
 
 export const postComment = (article, comment) => {
@@ -53,5 +62,13 @@ export const postComment = (article, comment) => {
     {username: 'jessjelly', body: comment})
     .then(() => {
         console.log('complete')
+    })
+}
+
+export const deleteComment = (comment) => {
+    axios
+    .delete(`${baseUrl}/comments/${comment}`)
+    .then(() => {
+        console.log('deleted')
     })
 }

@@ -92,7 +92,7 @@ body {
   background: #0F8B8D;
   padding: 20px;
   width: 90%;
-  height: 200px;
+  height: 400px;
   margin-bottom: 3em;
   color: #DAD2D8;
 }
@@ -130,24 +130,51 @@ list-style-type: none;
   color: #DAD2D8;
 }
 
+.singleArticleBodyBox {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  grid-template-areas: "main" "votes";
+}
+
+.votesButton {
+  grid-area: "votes";
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.votesText {
+  font-size: 2em;
+  color: #660000;
+}
+
 .commentBox {
   border-radius: 25px;
   background: #DAD2D8;
   padding: 20px;
   width: 90%;
-  height: 8em;
+  height: 30em;
   margin-bottom: 3em;
-  color: #0F8B8D;
+  color: #143642;
 }
 
 .commentForm {
   display: flex;
   flex-direction: column;
   width: 90%;
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
 }
 
 .commentInputBox {
-  width: 98%;
+  width: 104%;
   height: 5em;
+  border-radius: 10px;
+}
+
+.commentInputButton {
+  width: 10%;
+  height: 2em;
   border-radius: 10px;
 }

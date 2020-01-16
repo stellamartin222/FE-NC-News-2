@@ -33,8 +33,8 @@ export default class ArticlesList extends Component {
         )
     }
 
-    getOrder = event => {
-        this.setState({ sortBy: event})
+    getOrder = sortBy => {
+        this.setState({sortBy})
     }
 
     fetchArticles() {
