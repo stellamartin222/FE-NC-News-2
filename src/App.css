@@ -149,15 +149,6 @@ list-style-type: none;
   color: #660000;
 }
 
-.commentBox {
-  border-radius: 25px;
-  background: #DAD2D8;
-  padding: 20px;
-  width: 90%;
-  height: 30em;
-  margin-bottom: 3em;
-  color: #143642;
-}
 
 .commentForm {
   display: flex;
@@ -177,4 +168,20 @@ list-style-type: none;
   width: 10%;
   height: 2em;
   border-radius: 10px;
+}
+.commentBox {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  grid-template-areas: "left" "right";
+  border-radius: 25px;
+  background: #DAD2D8;
+  padding: 20px;
+  width: 90%;
+  height: 30em;
+  margin-bottom: 3em;
+  color: #143642;
+}
+
+.commentFloatRight {
+  grid-area: "right";
 }

@@ -18,7 +18,7 @@ export default class Comments extends Component {
                 <CommentForm article_id={this.props.article_id}/>
                 {comments.map((comment) => {
                     return <li key={comment.comment_id} className="noBulletPointsPlease">
-                        <CommentsCard comment={comment}/>
+                        <CommentsCard comment={comment} />
                     </li>
                 })}
                 </ul>
