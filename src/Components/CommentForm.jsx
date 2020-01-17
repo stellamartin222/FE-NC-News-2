@@ -10,7 +10,7 @@ export default class CommentForm extends Component {
             <form className="commentForm" onSubmit={this.handleSubmit}>
                 <label> Add a Comment : 
                     
-                <input className="commentInputBox" onChange={this.handleChange} type="text" placeholder="Write here...."/>
+                <input className="commentInputBox" onChange={this.handleChange} type="text" value={this.state.commentInput} placeholder="Write here...."/>
                 </label>
                 <button className="commentInputButton">Post</button>
             </form>
@@ -24,5 +24,10 @@ export default class CommentForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         postComment(this.props.article_id, this.state.commentInput)
+        .then(() => {
+            this.setState({
+                commentInput : ''
+            })
+        })
     }
 }

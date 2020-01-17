@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {updateVotes} from '../api'
+import {updateArticleVotes, updateCommentVotes} from '../api'
 // import ErrorDisplay from './ErrorDisplay'
 
 export default class Votes extends Component {
@@ -25,13 +25,14 @@ export default class Votes extends Component {
         const {article_id, comment_id} = this.props
         this.setState((currentState) => {
            return {
-               newVote: currentState.newVote + num,
+               newVote: currentState.newVote + +num,
                 voted: true
             }
         })
-        updateVotes(article_id, comment_id, num)
-        .catch((err) => {
-            console.dir(err)
-        })
+        if(article_id) {
+        updateArticleVotes(article_id, num)
+        } else {
+        updateCommentVotes(comment_id, num)
+        }
     }
 }

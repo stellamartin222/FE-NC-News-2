@@ -39,10 +39,4 @@ export default class Comments extends Component {
     componentDidMount() {
         this.fetchComments()
     }
-
-    componentDidUpdate(prevProps, prevState) {
-        if(prevState.comments !== this.state.comments){
-            this.fetchComments()
-        }
-    }
 }

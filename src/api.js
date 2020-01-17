@@ -11,6 +11,7 @@ export const getAllTopics = () => {
 }
 
 export const getAllArticles = (topic, sortBy) => {
+    console.log("api")
     return axios
     .get(`${baseUrl}/articles`,
     {params : {
@@ -18,6 +19,7 @@ export const getAllArticles = (topic, sortBy) => {
         sort_by:sortBy
     }})
     .then(({data})=> {
+        console.log("data --->", data.articles[0])
         return data.articles
     })
 }
@@ -38,22 +40,22 @@ export const getAllComments = (article_id) => {
         })
 }
 
-export const updateVotes = (article_id, comment_id, vote) => {
-    if(article_id) {
-    return axios
+export const updateArticleVotes = (article_id, vote) => {
+    axios
     .patch(`${baseUrl}/articles/${article_id}`, 
     {inc_votes: vote})
     .then(() => {
         console.log('updated')
-    })  
-    } else {
-        return axios
+    }) 
+}
+
+export const updateCommentVotes = (comment_id, vote) => {
+    axios
     .patch(`${baseUrl}/comments/${comment_id}`, 
     {inc_votes: vote})
     .then(() => {
         console.log('updated')
     })
-    }
 }
 
 export const postComment = (article, comment) => {
