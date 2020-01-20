@@ -201,7 +201,7 @@ list-style-type: none;
   background: #DAD2D8;
   padding: 20px;
   width: 90%;
-  height: 13em;
+  height: inherit;
   margin-bottom: 3em;
   color: #143642;
 }
