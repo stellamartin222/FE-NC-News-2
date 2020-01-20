@@ -26,7 +26,6 @@ export default class CommentForm extends Component {
         postComment(this.props.article_id, this.state.commentInput)
         .then((data) => {
             this.props.addNewComment(data)
-            
         })
         .then(() => {
             this.setState({

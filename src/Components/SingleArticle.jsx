@@ -45,7 +45,7 @@ export default class ArticleSingle extends Component {
         })
         .catch((err) => {
             this.setState({
-                err : {status : err.response.status, msg : err.response.msg},
+                err : {status : err.response.status, msg : err.response.data.msg},
                 isLoading: false
             })
         })

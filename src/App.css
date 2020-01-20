@@ -105,14 +105,14 @@ body {
   background: #0F8B8D;
   padding: 1em;
   width: 90%;
-  height: 12em;
+  height: initial;
   margin-bottom: 3em;
   color: #DAD2D8;
   box-shadow: 0.5em 0.5em #888888
 }
 
 .articleCardLeft {
-  width: 60em;
+  width: inherit;
 }
 
 .articleCardRight {
