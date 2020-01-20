@@ -15,15 +15,29 @@ export default class Comments extends Component {
         return (
             <div>
                 <ul>
-                <CommentForm article_id={this.props.article_id}/>
+                <CommentForm article_id={this.props.article_id} addNewComment={this.addNewComment}/>
                 {comments.map((comment) => {
                     return <li key={comment.comment_id} className="noBulletPointsPlease">
-                        <CommentsCard comment={comment} />
+                        <CommentsCard comment={comment} hideComment={this.removeComment}/>
                     </li>
                 })}
                 </ul>
             </div>
         )
+    }
+
+    removeComment = (comment_id) => {
+        this.setState(currentState => ({
+            comments : currentState.comments.filter(comment => comment.comment_id !== comment_id )
+        }));
+    }
+
+    addNewComment = (comment) => {
+        this.setState((currentState) => {
+            return {
+                comments : [comment, ...currentState.comments]
+            }
+        })
     }
 
     fetchComments() {

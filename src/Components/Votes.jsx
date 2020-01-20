@@ -5,18 +5,19 @@ import {updateArticleVotes, updateCommentVotes} from '../api'
 export default class Votes extends Component {
     state = {
         voted : false,
-        newVote : 0
-        // err : null,
-        // errMsg : false
+        newVote : 0,
+        err : null,
+        errMsg : false
     }
 
     render() {
+        const {voted} = this.state
         return (
             <div className="votesButton">
-                <button onClick={() => this.changeVotes(1)}>▲</button>
+                <button disabled={voted} onClick={() => this.changeVotes(1)}>▲</button>
                     <p className="votesText">{this.props.votes + this.state.newVote}</p>
-                <button onClick={() => this.changeVotes(-1)}>▼</button>
-                {/* {this.state.errMsg && (<p>Like Failed :(</p>)} */}
+                <button disabled={voted} onClick={() => this.changeVotes(-1)}>▼</button>
+                {this.state.errMsg && (<p>Like Failed</p>)}
             </div>
         )
     }

@@ -4,16 +4,19 @@ import CommentsList from './CommentsList'
 import CommentToggle from './CommentToggle'
 import Votes from './Votes'
 import moment from 'moment' 
+import ErrorDisplay from './ErrorDisplay'
 
 export default class ArticleSingle extends Component {
     state = {
         article :[],
-        isLoading : true
+        isLoading : true,
+        err: null
     }
 
     render() {
-        const {article, isLoading} = this.state
+        const {article, isLoading, err} = this.state
         if (isLoading) return <p>Loading...</p>
+        if (err) return <ErrorDisplay {...err} />
         return (
             <div className="singleArticleFullBox">
                 <div className="singleArticleBodyBox">
@@ -37,6 +40,12 @@ export default class ArticleSingle extends Component {
         .then((article) => {
             this.setState({
                 article : article,
+                isLoading: false
+            })
+        })
+        .catch((err) => {
+            this.setState({
+                err : {status : err.response.status, msg : err.response.msg},
                 isLoading: false
             })
         })

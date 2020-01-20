@@ -16,7 +16,6 @@ export default class ArticlesList extends Component {
         const {articles, isLoading, err} = this.state
         if(isLoading) return <p>Loading...</p>
         if (err) return <ErrorDisplay {...err} />
-        console.log(articles)
         return (
             <div className="articlesBox">
                 <header className="articlesHeader">

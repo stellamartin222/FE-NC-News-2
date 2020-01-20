@@ -30,7 +30,6 @@ export default class Home extends Component {
     }
 
     fetchArticles(sortBy) {
-        console.log('here')
         return getAllArticles(this.props.topic, sortBy)
             .then((articles) => {
                 this.setState({
@@ -50,7 +49,6 @@ export default class Home extends Component {
     recentArticle = () => {
         return getAllArticles(this.props.topic, "created_at")
         .then((articles) => {
-            console.log('sendhelps')
             this.setState({
                 mostRecent : articles[0]
             })

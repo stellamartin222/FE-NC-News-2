@@ -11,7 +11,6 @@ export const getAllTopics = () => {
 }
 
 export const getAllArticles = (topic, sortBy) => {
-    console.log("api")
     return axios
     .get(`${baseUrl}/articles`,
     {params : {
@@ -19,7 +18,6 @@ export const getAllArticles = (topic, sortBy) => {
         sort_by:sortBy
     }})
     .then(({data})=> {
-        console.log("data --->", data.articles[0])
         return data.articles
     })
 }
@@ -62,15 +60,15 @@ export const postComment = (article, comment) => {
     return axios
     .post(`${baseUrl}/articles/${article}/comments`, 
     {username: 'jessjelly', body: comment})
-    .then(() => {
-        console.log('complete')
+    .then(({data}) => {
+        return data.comment
     })
 }
 
 export const deleteComment = (comment) => {
     axios
     .delete(`${baseUrl}/comments/${comment}`)
-    .then(() => {
-        console.log('deleted')
+    .then(({data}) => {
+        return data.comment
     })
 }
