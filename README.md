@@ -1,4 +1,4 @@
-# NC-News
+## NC-News
 
 NC News is a react application created with the purpose of being a functioning news source, taking inspiration from the popular forum site reddit.
 
