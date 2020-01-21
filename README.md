@@ -1,3 +1,5 @@
+# NC-News
+
 NC News is a react application created with the purpose of being a functioning news source, taking inspiration from the popular forum site reddit.
 
 It contains a number of articles belonging to multiple topics,that can be ordered in multiple ways. These then in turn give you access to viewing single articles. Each article has their own comment sections and a vote function for both the comments and the article itself. 
