@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NC News is a react application created with the purpose of being a functioning news source, taking inspiration from the popular forum site reddit.
 
-## Available Scripts
+It contains a number of articles belonging to multiple topics,that can be ordered in multiple ways. These then in turn give you access to viewing single articles. Each article has their own comment sections and a vote function for both the comments and the article itself. 
 
-In the project directory, you can run:
+## Back-end Code :
+https://github.com/stellamartin222/NC_News
 
-### `npm start`
+## Front-end Code :
+https://github.com/stellamartin222/FE-NC-News-2
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deployed version :
+https://sm-fe-ncnews.herokuapp.com/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Node requirement:
+v12.10.0
 
-### `npm test`
+#### To run:
+1. Git clone the following link: https://github.com/stellamartin222/FE-NC-News-2
+2. npm install
+3. npm start
+4. You will be logged in as default user "jessjelly" and all comments left will be under that user
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## As a user I can ;
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- View all of the articles
+- View all of the topics 
+- View a single article
+- View the comments of an article
+- Sort the articles by; most recent, number of comments and number of votes 
+- Post a comment as "jessjelly" (the default user)
+- Delete your comments
+- Upvote or downvote each article only once and see the change in votes
+- Upvote or downvote each comment only once and see the change in votes
+- View the site on mobile devices comfortably without loss of style or functionality
+- Recieve errors when trying accessing non existent paths 
